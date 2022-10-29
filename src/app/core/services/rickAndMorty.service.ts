@@ -6,25 +6,25 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class MovieService {
+export class RickAndMortyService {
+
   constructor(private httpClient: HttpClient) {}
-  getPopularMovies(page: string = '1'): Observable<any> {
+
+  getCharacterRickAndMorty(page: string = '1'): Observable<any> {
     const params = new HttpParams()
-      .set('api_key', environment.theMovieApi.apiKey)
       .set('page', page)
-      .set('language', 'es-ES');
     return this.httpClient.get(
-      `${environment.theMovieApi.baseUrl}${environment.theMovieApi.popularMovies}`,
+      `${environment.rickyAndMortyApi.baseUrl}${environment.rickyAndMortyApi.caharacterMovies}`,
       { params: params }
     );
   }
+
   getMovieById(idMovie: string): Observable<any> {
     return this.httpClient.get(
       `${environment.theMovieApi.baseUrl}${environment.theMovieApi.getMovie}${idMovie}?api_key=${environment.theMovieApi.apiKey}&language=es-ES`
     );
   }
-  
-  getActorMovieById(idMovie: string): Observable<any> {
+    getActorMovieById(idMovie: string): Observable<any> {
     return this.httpClient.get(
       `${environment.theMovieApi.baseUrl}${environment.theMovieApi.getMovie}${idMovie}${environment.theMovieApi.getActorMovie}?api_key=${environment.theMovieApi.apiKey}&language=es-ES`
     );

@@ -4,10 +4,12 @@ import { PrivateGuard } from './core/guards/private.guard';
 import { PublicGuard } from './core/guards/public.guard';
 import { LayoutComponent } from './core/layout/layout.component';
 import { DetailMovieComponent } from './detail-movie/detail-movie.component';
+import { DetailRickMortyComponent } from './detail-rick-morty/detail-rick-morty.component';
 import { LoginComponent } from './login/login.component';
 import { MovieComponent } from './movie/movie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
+import { RickMortyComponent } from './rick-morty/rick-morty.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
       {
         path: 'detail-movie/:idMovie',
         component: DetailMovieComponent,
+      },
+      {
+        path: 'rick-morty',
+        component: RickMortyComponent,
+      },
+      {
+        path: 'rick-morty/:idRickMorty',
+        component: DetailRickMortyComponent,
       },
     ],
     canActivate: [PrivateGuard],

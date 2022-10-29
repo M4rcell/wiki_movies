@@ -30,7 +30,6 @@ export class DetailMovieComponent implements OnInit {
     this.movieService.getMovieById(idMovie).subscribe({
       next: (response) => {
         this.movie = response;
-        console.log("🚀  this.movie", this.movie)
       },
     });
   }
@@ -39,7 +38,6 @@ export class DetailMovieComponent implements OnInit {
     this.movieService.getActorMovieById(idMovie).subscribe({
       next: (response) => {
         this.actors = response.cast;
-        console.log("🚀 this.actors", this.actors)
       },
     });
 

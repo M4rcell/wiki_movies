@@ -1,0 +1,52 @@
+<mat-toolbar color="accent">
+  <button mat-button fxHide.lt-md (click)="getCharacterRickAndMorty('back')">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+  <span>Ricy and Morty</span>
+  <button mat-button fxHide.lt-md (click)="getCharacterRickAndMorty('forward')">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="cards">
+  <div class="movie_card" *ngFor="let item of ricyMorty">
+    <div class="info_section">
+      <div class="movie_header">
+        <img class="locandina" [src]="item.image" />
+        <h1>{{ item.name }}</h1>
+        <span class="status"
+          ><span class="status-icon"></span> {{ item.status }} -
+          {{ item.species }}</span
+        >
+        <span class="minutes">{{ item.created | date: "dd/MM/yyyy" }}</span>
+      </div>
+      <div class="movie_desc">
+        <div class="wraper">
+          <div class="title">Last known location:</div>
+          <div class="subtitle">{{ item.location.name }}</div>
+        </div>
+        <div class="wraper">
+          <div class="title">Origin:</div>
+          <div class="subtitle">{{ item.origin.name }}</div>
+        </div>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <li><i class="material-icons">share</i></li>
+          <li><i class="material-icons"></i></li>
+          <li><i class="material-icons">chat_bubble</i></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="blur_back"
+      [style]="'background: url(' + item.image + ')  no-repeat 0 0 / cover'"
+    ></div>
+  </div>
+</div>
+
+<div  class="wrapper"  *ngIf="loader">
+    <div class="ball ball-1"></div>
+    <div class="ball ball-2"></div>
+    <div class="ball ball-3"></div>
+</div>
