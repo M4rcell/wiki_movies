@@ -22,6 +22,8 @@ export class RegisterComponent implements OnInit {
   templateRefModal!: TemplateRef<any>;
 
   message = '';
+  
+  messageValidator = RegisterValidationsMessages;
   registerForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,

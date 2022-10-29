@@ -21,6 +21,9 @@
             formControlName="firstName"
             name="firstName"
           />
+          <mat-error *ngIf="registerForm.controls['firstName'].errors">
+            {{messageValidator.firstName[0].message}}
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="public-form-full-width">
           <input
@@ -29,6 +32,9 @@
             formControlName="lastName"
             name="lastName"
           />
+          <mat-error *ngIf="registerForm.controls['lastName'].errors">
+            {{messageValidator.lastName[0].message}}
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="public-form-full-width">
           <input
@@ -37,6 +43,12 @@
             formControlName="email"
             name="email"
           />
+          <mat-error *ngIf="registerForm.controls['email'].errors?.['required'] ">
+            {{messageValidator.email[0].message}}
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls['email'].errors?.['pattern'] ">
+            {{messageValidator.email[1].message}}
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="public-form-full-width">
           <input
@@ -46,6 +58,12 @@
             formControlName="password"
             name="password"
           />
+          <mat-error *ngIf="registerForm.controls['password'].errors?.['required']">
+            {{messageValidator.password[0].message}}
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls['password'].errors?.['minlength']">
+            {{messageValidator.password[1].message}}
+          </mat-error>
         </mat-form-field>
       </mat-card-content>
       <mat-card-content>
