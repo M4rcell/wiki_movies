@@ -53,4 +53,28 @@
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
+
+  
 </mat-grid-list>
+
+<div  class="cards">
+  <h2  class="title" >Actores</h2>
+
+	<div class="card" *ngFor="let item of this.actors">
+		<div class="card__images">
+			<img *ngIf="item.profile_path " class="card__image" src="{{ 'https://image.tmdb.org/t/p/w500/' + item.profile_path }}"  alt="wave" />
+			<img *ngIf="!item.profile_path" class="card__image" src="https://i.pinimg.com/550x/f6/50/49/f65049faeeb2768ff3dc7f8415fd435f.jpg"  alt="wave" />
+		</div>
+    
+    <div class="card__description">
+      <div class="card__title">
+      Nombre :  {{item.name}}  
+      </div>
+      <div class="card__subtitle">
+      Actor :  {{item.character}}
+      </div>
+
+    </div>
+	</div>
+
+</div>

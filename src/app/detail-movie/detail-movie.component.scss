@@ -10,3 +10,64 @@
 .mat-card {
   border: solid 2px #ffffff;
 }
+
+
+
+// colour stuff
+$white: #ffffff;
+$lightBG: #dce1df;
+$salmon: #ff6666;
+
+$teal: #0096a0;
+$tealMid: #0ebac7;
+$tealContrast: #33ffff;
+$tealShade:	#007c85;
+
+$darkGrey: #4f585e;
+
+.title{
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.cards{
+  text-align: start;
+  max-width: fit-content; 
+   margin: 70px;
+}
+
+.card {
+  
+  background: $white;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 300px;
+  z-index: 1;
+  border-radius: 15px;
+
+  &__image {
+    width: -webkit-fill-available;
+    height: 230px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &__description {
+    margin: 10px 10px;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__subtitle {
+    font-weight: 300px;
+    font-size: 14px;
+  }
+
+}
